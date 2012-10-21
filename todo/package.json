@@ -1,0 +1,21 @@
+{
+  "name": "todo",
+  "version": "0.0.1",
+  "description": "Simple todo",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "dependencies": {
+    "connect": "2.6.0",
+    "urlrouter": "0.2.3",
+    "connect-render": "0.1.7",
+    "mongoskin": "0.4.4"
+  },
+  "repository": "",
+  "keywords": [
+    "todo"
+  ],
+  "author": "fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)",
+  "license": "MIT"
+}
