@@ -1,37 +1,62 @@
 # todo
 
+A very simple TODO application build on Node.js.
+
 ## Install
 
 ```bash
-$ npm install
+$ make install
+
+# or on windows:
+$ npm install --registry=http://r.cnpmjs.org
 ```
 
 ## Run
 
 ```bash
-$ node ./
+$ node app.js
 ```
 
 ## Project Directory
 
-```
-|- app.js
-|- routes.js
-|- package.json
-|- views/
- |- layout.html
- |- index.html
- |- error.html
- |- task/
-  |- edit.html
-|- public/
- |- images/
- |- styles/
-|- controllers/
- |- home.js
- |- task.js
-|- models/
- |- db.js
- |- task.js
-|- node_modules/
+```bash
+$ tree -I node_modules
+.
+├── Makefile
+├── README.md
+├── app.js
+├── config.js
+├── controllers
+│   ├── home.js
+│   └── task.js
+├── models
+│   ├── db.js
+│   ├── index.js
+│   └── task.js
+├── package.json
+├── public
+│   ├── images
+│   │   ├── doing.gif
+│   │   └── finished.jpg
+│   └── styles
+│       ├── index
+│       │   ├── images
+│       │   │   ├── bg_1.png
+│       │   │   ├── email.png
+│       │   │   ├── home.png
+│       │   │   ├── msn.png
+│       │   │   ├── ok.gif
+│       │   │   ├── qq.png
+│       │   │   └── website.png
+│       │   └── style.css
+│       └── reset.css
+├── routes.js
+└── views
+    ├── error.html
+    ├── index.html
+    ├── layout.html
+    └── task
+        └── edit.html
+
+9 directories, 26 files
 ```

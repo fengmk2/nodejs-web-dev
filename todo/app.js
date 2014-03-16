@@ -1,6 +1,6 @@
-/*!
+/**!
  * todo - app.js
- * Copyright(c) 2012 fengmk2 <fengmk2@gmail.com>
+ * Copyright(c) 2012 - 2014 fengmk2 <fengmk2@gmail.com>
  * MIT Licensed
  */
 
@@ -15,6 +15,7 @@ var path = require('path');
 var urlrouter = require('urlrouter');
 var render = require('connect-render');
 var routes = require('./routes');
+var config = require('./config');
 
 var app = connect(
   connect.bodyParser(),
@@ -41,6 +42,9 @@ app.use(render({
     },
     now: function (req, res) {
       return new Date();
+    },
+    config: function () {
+      return config;
     }
   }
 }));
@@ -50,4 +54,6 @@ app.use(render({
  */
 app.use(urlrouter(routes));
 
-app.listen(1984);
+app.listen(config.port);
+
+console.log('$ open http://127.0.0.1:' + config.port);
