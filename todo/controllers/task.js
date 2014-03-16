@@ -1,16 +1,20 @@
-/*!
+/**!
  * todo - controllers/task.js
- * Copyright(c) 2012 fengmk2 <fengmk2@gmail.com>
+ *
+ * Copyright(c) fengmk2 and other contributors.
  * MIT Licensed
+ *
+ * Authors:
+ *   fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)
  */
 
-"use strict";
+'use strict';
 
 /**
  * Module dependencies.
  */
 
-var Task = require('../models').Task;
+var Task = require('../proxy/task');
 
 exports.add = function (req, res, next) {
   var title = req.body.title;
@@ -29,7 +33,7 @@ exports.add = function (req, res, next) {
 exports.finish = function (req, res, next) {
   var tid = req.params.id;
   var task = { finished: 1, updated_at: new Date() };
-  Task.updateById(tid, { $set: task }, function (err, item) {
+  Task.updateById(tid, task, function (err, item) {
     if (err) {
       return next(err);
     }

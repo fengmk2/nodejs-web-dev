@@ -2,6 +2,8 @@
 
 A very simple TODO application build on Node.js.
 
+Data store by [leveldb](https://github.com/rvagg/node-levelup)
+
 ## Install
 
 ```bash

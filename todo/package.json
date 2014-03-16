@@ -7,10 +7,11 @@
     "test": "make test-all"
   },
   "dependencies": {
+    "utility": "0.1.11",
     "connect": "2.6.0",
     "urlrouter": "0.2.3",
     "connect-render": "0.1.7",
-    "mongoskin": "0.4.4"
+    "level": "0.18.0"
   },
   "devDependencies": {
     "jshint": "*",
@@ -26,6 +27,7 @@
   "keywords": [
     "todo"
   ],
+  "engines": { "node": "~0.10.0" },
   "author": "fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)",
   "license": "MIT"
 }
