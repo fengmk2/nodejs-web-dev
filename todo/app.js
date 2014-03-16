@@ -54,6 +54,10 @@ app.use(render({
  */
 app.use(urlrouter(routes));
 
-app.listen(config.port);
+if (!module.parent) {
+  app.listen(config.port);
 
-console.log('$ open http://127.0.0.1:' + config.port);
+  console.log('$ open http://127.0.0.1:' + config.port);
+}
+
+module.exports = app;

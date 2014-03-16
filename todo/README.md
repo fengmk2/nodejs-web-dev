@@ -27,15 +27,15 @@ $ tree -I node_modules
 ├── Makefile
 ├── README.md
 ├── app.js
+├── common
+│   └── db.js
 ├── config.js
 ├── controllers
 │   ├── home.js
 │   └── task.js
-├── models
-│   ├── db.js
-│   ├── index.js
-│   └── task.js
 ├── package.json
+├── proxy
+│   └── task.js
 ├── public
 │   ├── images
 │   │   ├── doing.gif
@@ -59,6 +59,4 @@ $ tree -I node_modules
     ├── layout.html
     └── task
         └── edit.html
-
-9 directories, 26 files
 ```
