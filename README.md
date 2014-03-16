@@ -1,4 +1,4 @@
-# Nodejs 快速开发Web产品
+# Node.js 简介 <br>& 快速开发 Web 产品
 
 ---
 
@@ -10,6 +10,7 @@
 
 <hr/>
 
+### npm: [cnpmjs.org/~fengmk2](http://cnpmjs.org/~fengmk2)
 ### Github: @[fengmk2](https://github.com/fengmk2/)
 ### Blog: http://fengmk2.github.com
 ### Twitter: @fengmk2
@@ -17,7 +18,113 @@
 
 ---
 
-# 什么是Web开发
+## 内容简介
+
+### * 简单介绍 Node.js 的历史以及现状
+### * 以一个实用的Web小应用介绍基于 Node.js 的Web开发过程
+
+---
+
+# Node.js 简介
+
+---
+
+## 什么是 Node.js
+
+![1](http://nfs.nodeblog.org/6/f/6f9650b7769cbb4972cd96d766d5eeae.png)
+
+---
+
+## Node.js
+
+### * 09年发布, 最新稳定版本 v0.10.26
+### * [github stars 排名第三](https://github.com/search?q=stars%3A%3E1&s=stars&type=Repositories)
+
+![1](http://nfs.nodeblog.org/6/3/63e8007e08f9e6dfd09db51aac97889b.png)
+
+---
+
+## Node.js 最常被提起的特性
+
+### * 基于 google v8 引擎 (快速)
+### * 事件驱动 (不同的编程思维)
+### * ⾮阻塞I/O (⾼高效)
+### * 单线程 (模型简单, ⽆锁)
+
+---
+
+## 事件循环
+
+![1](http://nfs.nodeblog.org/5/5/553bd798d3a37e03e8673c64eec65772.png)
+
+---
+
+## NPM: Node Packaged Modules
+
+### * 超过 63000+ 个模块
+### * 跟随 Node.js 源码分发的包管理⼯工具
+### * 精简的 Node.js 内核的丰富扩展
+
+![1](http://nfs.nodeblog.org/6/4/645c4646334f3bf7820bbd3425e406cc.png)
+
+---
+
+## NPM 模块数量增长惊人
+
+![1](http://nfs.nodeblog.org/8/9/892d741f1ad854b770971162f3460a5d.png)
+
+---
+
+## 谁在使用 Node.js?
+
+[Learn More About The Node Community](http://strongloop.com/developers/node-js-infographic/)
+
+![1](http://nfs.nodeblog.org/7/6/76192204b967eeba29527e29fce8b2a7.png)
+
+---
+
+# Node.js 到底能干吗?
+
+---
+
+## 服务器端
+
+### * Web 服务
+####   * restful API 服务
+####   * 前后端彻底分离的web前端服务
+####   * 全栈 web 应⽤
+### * ⾼性能中间层
+### * ⾼实时性应⽤用(游戏服务器/在线聊天室)
+
+---
+
+## 服务器端
+
+![1](http://nfs.nodeblog.org/5/3/533a53f41638877434108b76a0a21a62.png)
+
+---
+
+## 前端工具
+
+![1](http://nfs.nodeblog.org/0/8/0885c2a70669b92f59c2c53c5dc57ce3.png)
+
+---
+
+## 更多领域
+
+![1](http://nfs.nodeblog.org/6/3/63e3774bec0ae6a3a4237a471803af12.png)
+
+---
+
+## Node.js 简介小结
+
+### * Node.js 还在飞速发展中
+### * Node.js 不仅仅能做服务端开发, 还能做你没想象到的
+### * 等待你开启人生的第一个 node 进程
+
+---
+
+# 什么是 Web 开发
 
 ---
 
@@ -46,16 +153,6 @@
 
 ---
 
-## Nodejs的核心关键词
-
-![about nodejs](http://nfs.nodeblog.org/a/e/ae78a26d6c26b7ab755f1c34da778196.png)
-
-### * V8
-### * Event driven
-### * Non-blocking IO
-
----
-
 ## V8有多快？
 
 ![fibonacci](http://nfs.nodeblog.org/e/c/eca1b2026c120772533318553454c7c6.png)
@@ -64,7 +161,7 @@
 
 ---
 
-## 高楼从地起: Hello World
+## 高楼平地起: Hello World
 
 [helloworld.js](https://github.com/fengmk2/nodejs-web-dev/blob/master/helloworld.js)
 ```js
@@ -73,7 +170,7 @@ http.createServer(function (req, res) {
   console.log('%s %s : %j', req.method, req.url, req.headers);
   req.on('end', function () {
     res.writeHeader(200, { 'Content-Type': 'text/html' });
-    res.end('Hello Alibaba.');
+    res.end('Hello QCon Hangzhou');
   });
 }).listen(1984);
 ```
@@ -93,7 +190,7 @@ http.createServer(function (req, res) {
 ## console.log()
 
 ```bash
-$ node helloworld.js 
+$ node helloworld.js
 
 GET / : {"host":"localhost.cnodejs.org:1984","connection":"keep-alive","cache-control":"max-age=0","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4","accept":"text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8","accept-encoding":"gzip,deflate,sdch","accept-language":"zh-CN,zh;q=0.8,en;q=0.6,en-US;q=0.4","accept-charset":"GBK,utf-8;q=0.7,*;q=0.3"}
 
@@ -108,7 +205,7 @@ GET /favicon.ico : {"host":"localhost.cnodejs.org:1984","connection":"keep-alive
 
 ## Simple todo
 
-使用 `Mongodb` 存储，快速实现最简单的两个功能:
+使用 [`leveldb`](https://github.com/rvagg/node-levelup) 存储，快速实现最简单的两个功能:
 
 ### * 添加任务
 ### * 显示任务
@@ -118,34 +215,51 @@ GET /favicon.ico : {"host":"localhost.cnodejs.org:1984","connection":"keep-alive
 
 ## 目录结构
 
-```
-|- app.js
-|- config.js
-|- routes.js
-|- package.json
-|- views/
- |- layout.html
- |- index.html
- |- error.html
- |- task/
-  |- edit.html
-|- public/
- |- images/
- |- styles/
-|- controllers/
- |- home.js
- |- task.js
-|- models/
- |- db.js
- |- task.js
-|- node_modules/
+```bash
+$ tree -I node_modules
+.
+├── Makefile
+├── README.md
+├── app.js
+├── common
+│   └── db.js
+├── config.js
+├── controllers
+│   ├── home.js
+│   └── task.js
+├── package.json
+├── proxy
+│   └── task.js
+├── public
+│   ├── images
+│   │   ├── doing.gif
+│   │   └── finished.jpg
+│   └── styles
+│       ├── index
+│       │   ├── images
+│       │   │   ├── bg_1.png
+│       │   │   ├── email.png
+│       │   │   ├── home.png
+│       │   │   ├── msn.png
+│       │   │   ├── ok.gif
+│       │   │   ├── qq.png
+│       │   │   └── website.png
+│       │   └── style.css
+│       └── reset.css
+├── routes.js
+└── views
+    ├── error.html
+    ├── index.html
+    ├── layout.html
+    └── task
+        └── edit.html
 ```
 
 ---
 
 ## package.json
 
-### 使用npm init 生成项目的 package.json
+### 使用 npm init 生成项目的 package.json
 
 ```bash
 $ npm init
@@ -157,10 +271,11 @@ $ npm init
 
 ```json
   "dependencies": {
+    "utility": "0.1.11",
     "connect": "2.6.0", // web server, static files hosting
     "urlrouter": "0.2.3", // url routing
     "connect-render": "0.1.7", // ejs template engine helper
-    "mongoskin": "0.4.4" // mongodb client
+    "level": "0.18.0" // leveldb client
   }
 ```
 
@@ -198,13 +313,48 @@ module.exports = function home(req, res, next) {
 
 ---
 
+## `index.html` 模板
+
+```html
+<div class="box todos">
+  <h2 class="box">待办事项</h2>
+  <ul>
+    <% for (var i = 0; i < tasks.length; i++) {
+      var task = tasks[i];
+      var classname = task.finished ? 'class="finished"' : '';
+    %>
+      <li <%- classname %>>
+        <% if (!task.finished) { %>
+          <%= task.title %>
+          &nbsp;
+          <a href="/task/<%- task.id %>/finish">完成</a>
+        <% } else { %>
+          <del><%= task.title %></del>
+          &nbsp;
+          <a href="/task/<%- task.id %>/unfinish">恢复</a>
+        <% } %>
+      </li>
+    <% } %>
+  </ul>
+</div>
+```
+
+---
+
 ## 静态文件服务
 
 ### 直接使用 [connect] 的 static 中间件模块
 
 ```js
-app.use('/public', 
+app.use('/public',
   connect.static(path.join(__dirname, 'public')));
+```
+
+### CSS，图片，客户端脚本
+
+```html
+<link href="/public/styles/reset.css" rel="stylesheet" type="text/css" />
+<link href="/public/styles/index/style.css" rel="stylesheet" type="text/css" />
 ```
 
 ---
@@ -234,18 +384,14 @@ app.post('/task', task.add);
 
 ---
 
-## 任务 controller 实现代码
+## 添加任务 controller 实现代码
 
 ```js
-var Task = require('../models').Task;
+var Task = require('../proxy/task');
 
 exports.add = function (req, res, next) {
   var title = req.body.title;
-  var task = {
-    title: title, 
-    finished: 0, 
-    created_at: new Date()
-  };
+  var task = { title: title, finished: 0, created_at: new Date() };
   Task.insert(task, function (err, item) {
     if (err) {
       return next(err);
@@ -260,17 +406,13 @@ exports.add = function (req, res, next) {
 
 ---
 
-## 在主页面上显示刚才提交的任务
+## 在主页面上显示刚才添加的任务
 
 ```js
-var Task = require('../models').Task;
+var Task = require('../proxy/task');
 
 module.exports = function home(req, res, next) {
-  // 按未完成的排前面，然后再按时间倒序显示
-  var options = { 
-    sort: [ [ 'finished', 'asc' ], [ '_id', 'desc' ] ] 
-  };
-  Task.findItems({}, options, function (err, tasks) {
+  Task.list(function (err, tasks) {
     if (err) {
       return next(err);
     }
@@ -283,9 +425,18 @@ module.exports = function home(req, res, next) {
 
 ---
 
+## 添加任务效果
+
+![add task](http://ww1.sinaimg.cn/large/6cfc7910jw1dy3drrvbboj.jpg)
+
+---
+
 ## 完成任务
 
+### URL Routing
+
 ```js
+// GET /task/50843cf924438a2dfa000001/finish
 app.get('/task/(:id)/finish', task.finish);
 ```
 
@@ -293,9 +444,9 @@ app.get('/task/(:id)/finish', task.finish);
 
 ```js
 exports.finish = function (req, res, next) {
-  var tid = req.params.id;
+  var tid = req.params.id; // mapping from url
   var task = { finished: 1, updated_at: new Date() };
-  Task.updateById(tid, { $set: task }, function (err, item) {
+  Task.updateById(tid, task, function (err, item) {
     if (err) {
       return next(err);
     }
@@ -321,7 +472,7 @@ exports.finish = function (req, res, next) {
 
 ## “自己动手，丰衣足食”
 
-### fork [this project](https://github.com/fengmk2/nodejs-web-dev), then do it.
+### fork [github.com/fengmk2/nodejs-web-dev](https://github.com/fengmk2/nodejs-web-dev/tree/master/todo), then do it.
 
 ---
 
@@ -341,13 +492,30 @@ exports.finish = function (req, res, next) {
 
 ---
 
-## 内部NPM Web
+## 内部 NPM Web
+
+![npmweb](http://ww4.sinaimg.cn/large/6cfc7910jw1dy3v4d0zs1j.jpg)
 
 ---
 
 ## CNodejs 社区
 
 ![cnode](http://ww3.sinaimg.cn/large/6cfc7910jw1dy3d9uzu1yj.jpg)
+
+---
+
+## cnpmjs.org
+
+![cnpmjs.org](http://nfs.nodeblog.org/f/3/f378cb0295a229eac2531b5a4bdd7786.png)
+
+---
+
+## 推荐资源
+
+### * [The Node Beginner Book](http://www.nodebeginner.org/), 中文版: [Node入门](http://www.nodebeginner.org/index-zh-cn.html)
+### * @朴灵 [深入浅出Node.js](http://book.douban.com/subject/25768396/)
+### * [七天学会NodeJS](http://nqdeng.github.io/7-days-nodejs/)
+### * [StrongLoop blog](http://strongloop.com/strongblog/) 绝对是 Node.js 最新知识的权威博客
 
 ---
 
@@ -358,3 +526,4 @@ exports.finish = function (req, res, next) {
 
  [connect]: https://github.com/senchalabs/connect
  [ejs]: https://github.com/visionmedia/ejs
+ [koa]: https://github.com/koajs/koa
