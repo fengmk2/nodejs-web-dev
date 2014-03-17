@@ -11,6 +11,7 @@ jshint: install
 
 test: install
 	@NODE_ENV=test ./node_modules/.bin/mocha \
+	  --harmony
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
 		$(MOCHA_OPTS) \
@@ -36,7 +37,7 @@ check-coverage:
 test-all: jshint test test-cov
 
 autod: install
-	@./node_modules/.bin/autod -w
+	@./node_modules/.bin/autod -w -e public,views
 	@$(MAKE) install
 
 .PHONY: test
