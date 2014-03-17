@@ -14,12 +14,14 @@
  * Module dependencies.
  */
 
-var leveldb = require('level');
+var leveldb = require('levelup');
+var memdown = require('memdown');
 var config = require('../config');
 var thunkify = require('thunkify-wrap');
 
-var db = leveldb(config.db, {
-  valueEncoding: 'json'
+var db = leveldb('/does/not/matter', {
+  valueEncoding: 'json',
+  db: memdown
 });
 
 thunkify(db, ['get', 'put']);

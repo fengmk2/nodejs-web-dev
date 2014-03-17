@@ -11,6 +11,7 @@ jshint: install
 
 test: install
 	@NODE_ENV=test ./node_modules/.bin/mocha \
+	  --harmony
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
 		$(MOCHA_OPTS) \

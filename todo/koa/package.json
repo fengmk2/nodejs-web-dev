@@ -9,7 +9,8 @@
   "dependencies": {
     "koa": "0.5.1",
     "koa-middlewares": "0.0.11",
-    "level": "0.18.0",
+    "levelup": "0.18.2",
+    "memdown": "0.7.0",
     "thunkify-wrap": "0.1.0",
     "utility": "0.1.11"
   },
@@ -29,7 +30,7 @@
   "keywords": [
     "todo"
   ],
-  "engines": { "node": "~0.10.0" },
+  "engines": { "node": "~0.11.11" },
   "author": "fengmk2 <fengmk2@gmail.com> (http://fengmk2.github.com)",
   "license": "MIT"
 }
